@@ -1,0 +1,5 @@
+require('rick.snippets.bindable-property')
+require('rick.snippets.seq')
+require('rick.snippets.debuggable-log')
+require('rick.snippets.nuget-source')
+require('rick.snippets.go-err')
