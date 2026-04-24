@@ -1,3 +1,3 @@
 **/.DS_Store
-**/sql-scripts/**/*
+**/sql-scripts/**/*.sql
 **/custom-dashboard.lua
