@@ -67,5 +67,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     LspRemap('<leader>.', event.buf, function()
         vim.lsp.buf.code_action()
     end, 'Lsp Code Action')
+
+    LspRemap('<leader>tl', event.buf, builtin.lsp_document_symbols, 'Document Symbols')
   end
 })

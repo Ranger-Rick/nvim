@@ -115,11 +115,11 @@ NMap('<leader>sg', builtin.git_files, 'Telescope [S]earch [G]it files')
 NMap('<leader>sl', builtin.live_grep, '[S]earch [L]ive Grep')
 NMap('<leader>gh', builtin.git_bcommits, '[G]it [H]istory')
 
-NMap('<leader>tl', builtin.treesitter, '[T]elescope [T]reesitter [L]ist Symbols')
-NMap('<leader>tm', function ()
-    builtin.treesitter(
-        { symbols = { "function", "method" } })
-end, '[T]elescope [T]reesitter [M]ethods')
+--NMap('<leader>tl', builtin.treesitter, '[T]elescope [T]reesitter [L]ist Symbols')
+--NMap('<leader>tm', function ()
+--    builtin.treesitter(
+--        { symbols = { "function", "method" } })
+--end, '[T]elescope [T]reesitter [M]ethods')
 
 -- Mako Repo
 NMapTelescopeGit('el', 'src/Services/KeyCloak/redsail-keycloak-extensions/src/main/java/com')
