@@ -41,9 +41,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.buf.implementation()
     end, 'Lsp Go to Implementation in New Tab')
 
-
-    local builtin = require('telescope.builtin')
-    LspRemap('gr', event.buf, builtin.lsp_references, 'Lsp Get References')
     LspRemap('<F2>', event.buf, vim.lsp.buf.rename, 'Lsp Rename')
     LspRemap('<leader>cl', event.buf, vim.lsp.codelens.refresh, 'Lsp Refresh Code Lens')
     LspRemap('<leader>ckl', event.buf, vim.lsp.codelens.clear, 'Lsp Clear Code Lens')
@@ -68,6 +65,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.buf.code_action()
     end, 'Lsp Code Action')
 
+    local builtin = require('telescope.builtin')
+
+    LspRemap('gr', event.buf, function ()
+        builtin.lsp_references({
+            path_display = {'shorten'},
+            show_line = false
+        })
+    end, 'Lsp Get References')
+
     LspRemap('<leader>tl', event.buf, builtin.lsp_document_symbols, 'Document Symbols')
-  end
+end
 })
