@@ -145,59 +145,25 @@ local legacyPaths = {
 -- Mono Repo
 for i, path in ipairs(monoPaths) do
    NMapTelescopeFiles(i .. 'l', path)
-end
-
-for i, path in ipairs(monoPaths) do
    NMapTelescopeLiveGrep(i .. 'sl', path)
-end
-
-for i, path in ipairs(monoPaths) do
    NMapExplore(i .. 'k', '/Users/rickbordelon/Documents/Projects/redsail-mobile-mono/' .. path)
-end
-
-for i, path in ipairs(monoPaths) do
-    local title = '[G]it [H]istory in the ' .. path .. ' directory'
-    NMap(
-        '<leader>' .. i .. 'gh',
-        function ()
-            builtin.git_bcommits({
-                cwd = path,
-                prompt_title = title
-            })
-        end,
-        title
-    )
+   NMapBCommits('<leader>' .. i .. 'gh', path)
 end
 
 -- Legacy Mono Repo
+NMapTelescopeFiles('ml', 'legacy/PioneerRx.Mobile.Apps')
+NMapTelescopeLiveGrep('msl', 'legacy/PioneerRx.Mobile.Apps')
+
 for i, path in ipairs(legacyPaths) do
     NMapTelescopeFiles('m' .. i .. 'l', path)
-end
-
-for i, path in ipairs(legacyPaths) do
     NMapTelescopeLiveGrep('m' .. i .. 'sl', path)
-end
-
-for i, path in ipairs(legacyPaths) do
     NMapExplore('m' .. i .. 'k', '/Users/rickbordelon/Documents/Projects/redsail-mobile-mono/' .. path)
-end
 
-for i, path in ipairs(legacyPaths) do
     local gitRoot = 'legacy/PioneerRx.Mobile.Apps'
     if path == 'legacy/PioneerRx.Mobile.Api' then
         gitRoot = path
     end
 
-    local title = '[G]it [H]istory in the ' .. gitRoot .. ' directory'
-
-    NMap(
-        '<leader>m' .. i .. 'gh',
-        function ()
-            builtin.git_bcommits({
-                cwd = gitRoot,
-                prompt_title = title
-            })
-        end,
-        title
-    )
+    local shortcut = '<leader>m' .. i .. 'gh'
+    NMapBCommits(shortcut, gitRoot)
 end

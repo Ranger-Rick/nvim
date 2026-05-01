@@ -58,3 +58,19 @@ function NMapExplore(shortcut, dir)
     end,
     { desc = 'Explore files in ' .. dir })
 end
+
+function NMapBCommits(shortcut, path)
+    local title = '[G]it [H]istory in the ' .. path .. ' directory'
+
+    NMap(
+        shortcut,
+        function ()
+            builtin.git_bcommits({
+                cwd = path,
+                prompt_title = title
+            })
+        end,
+        title
+    )
+end
+
