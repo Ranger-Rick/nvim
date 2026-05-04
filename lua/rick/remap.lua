@@ -71,7 +71,7 @@ NMap('<leader>w', function() vim.cmd(":w") end, '[W]rite')
 
 --Quit
 NMap('<leader>q', function() vim.cmd(":q") end, '[Q]uit')
-NMap('<leader>FQ', function() vim.cmd(":q!") end, '[F]orce [Q]uit')
+NMap('<leader>FQ', function() vim.cmd(":qall!") end, '[F]orce [Q]uit')
 
 --Tabs
 NMap('<leader>tn', function() vim.cmd(":tabn") end, '[T]ab [N]ext')
