@@ -128,7 +128,7 @@ local monoPaths = {
     'redsail/redsail-mobile-docs',
     'redsail/redsail-mobile-api',
     'redsail/redsail-mobile-apps',
-    'redsail/redsail-mobile-spikes',
+    'redsail/redsail-cash-rounding',
     'redsail/redsail-mobile-kb',
     'redsail/pms/pioneerrx/PioneerPharmacySystemDbSql',
 
