@@ -47,9 +47,11 @@ NMap('<leader>cd', function() vim.cmd(':Copilot disable') end, '[C]opilot [D]isa
 NMap('<leader>ce', function() vim.cmd(':Copilot enable') end, '[C]opilot [E]nable')
 NMap('<leader>cm', function() vim.cmd(':Copilot panel') end, '[C]opilot Panel')
 
---dotnet template helper
+--dotnet helpers
 require('rick.utils.dotnet-new')
+require('rick.utils.dotnet-restore')
 NMap('<leader>dn', DotnetTemplate, '[D]otnet [N]ew template')
+NMap('<leader>dr', DotnetRestoreLegacyMonoRepo, '[D]otnet [R]estore')
 
 --[F]ormat [J]son
 NMap('<leader>fj', function() vim.cmd(":%!jq '.'") end, '[F]ormat [J]son')
@@ -58,10 +60,6 @@ NMap('<leader>ch', function() vim.cmd(':noh') end, '[C]lear [H]ighlight')
 
 --Use vim.ui.select to populate spelling suggestions
 require('rick.utils.spell')
-
---Relative Number
-NMap('<leader>er', function() vim.cmd(":set rnu") end, '[E]nable [R]elative number')
-NMap('<leader>dr', function() vim.cmd(":set nornu") end, '[D]isable [R]elative number')
 
 --File Explorer
 NMap('<leader>ee', function() vim.cmd(":Ex") end, 'Activate NetRw file explorer')
