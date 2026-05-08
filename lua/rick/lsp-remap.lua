@@ -48,8 +48,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     LspRemap('gD', event.buf, vim.lsp.buf.declaration, 'Lsp Go to Declaration')
     LspRemap('go', event.buf, vim.lsp.buf.type_definition, 'Lsp Type Definition')
     LspRemap('gs', event.buf, vim.lsp.buf.signature_help, 'Lsp Signature Help')
-    LspRemap('<leader>si', event.buf, function() vim.cmd(':LspInfo') end, 'Show Lsp Info')
-    LspRemap('<leader>so', event.buf, function() vim.cmd(':LspLog') end, 'Show Lsp Log')
 
     LspRemap('<leader>ih', event.buf, function ()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
