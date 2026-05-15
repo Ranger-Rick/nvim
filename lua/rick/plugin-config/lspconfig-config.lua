@@ -3,7 +3,7 @@ vim.filetype.add({
         ['docker-compose.yml'] = 'yaml.docker-compose',
         ['docker-compose.yaml'] = 'yaml.docker-compose',
         ['docker-compose-qa.yaml'] = 'yaml.docker-compose',
-        ['rpn.yaml'] = 'yaml.docker-compose',
+        ['rpn.yml'] = 'yaml.docker-compose',
         ['compose.yml'] = 'yaml.docker-compose',
         ['compose.yaml'] = 'yaml.docker-compose',
     }
