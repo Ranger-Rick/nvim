@@ -37,7 +37,7 @@ local function GetFileTypes()
         'yaml',
         'Dockerfile',
         'java',
-        'terraform'
+        'tf'
     }
 end
 
