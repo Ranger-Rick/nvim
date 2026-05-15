@@ -1,3 +1,14 @@
+vim.filetype.add({
+    filename = {
+        ['docker-compose.yml'] = 'yaml.docker-compose',
+        ['docker-compose.yaml'] = 'yaml.docker-compose',
+        ['docker-compose-qa.yaml'] = 'yaml.docker-compose',
+        ['rpn.yaml'] = 'yaml.docker-compose',
+        ['compose.yml'] = 'yaml.docker-compose',
+        ['compose.yaml'] = 'yaml.docker-compose',
+    }
+})
+
 vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
@@ -7,7 +18,6 @@ vim.lsp.config('lua_ls', {
         }
     }
 })
-vim.lsp.enable('lua_ls')
 
 require('rick.plugin-config.lsp-configs.vue-config')
 
@@ -21,7 +31,6 @@ vim.lsp.config("roslyn", {
         }
     }
 })
-vim.lsp.enable('roslyn')
 
 vim.lsp.config('lemminx', {
     filetypes = {
@@ -30,7 +39,6 @@ vim.lsp.config('lemminx', {
         "svg"
     }
 })
-vim.lsp.enable('lemminx')
 
 vim.lsp.config('jdtls', {
     settings = {
@@ -38,13 +46,25 @@ vim.lsp.config('jdtls', {
         }
     }
 })
-vim.lsp.enable('jdtls')
+
+vim.lsp.config('terraformls', {
+    filetypes = {
+        'tf',
+        'terraform',
+        'terraform-vars'
+    }
+})
+
 
 vim.lsp.enable('bashls')
-vim.lsp.enable('dockerls')
 vim.lsp.enable('docker_compose_language_service')
-vim.lsp.enable('pyright')
-vim.lsp.enable('jsonls')
-vim.lsp.enable('gopls')
+vim.lsp.enable('dockerls')
 vim.lsp.enable('eslint')
-vim.lsp.enable('terraform-ls')
+vim.lsp.enable('gopls')
+vim.lsp.enable('jdtls')
+vim.lsp.enable('jsonls')
+vim.lsp.enable('lemminx')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('roslyn')
+vim.lsp.enable('terraformls')
