@@ -67,11 +67,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     LspRemap('gr', event.buf, function ()
         builtin.lsp_references({
-            path_display = {'shorten'},
+            --path_display = {'truncate'},
             show_line = false
         })
     end, 'Lsp Get References')
-
-    LspRemap('<leader>tl', event.buf, builtin.lsp_document_symbols, 'Document Symbols')
 end
 })
