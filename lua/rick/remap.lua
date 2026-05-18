@@ -62,7 +62,7 @@ NMap('<leader>ch', function() vim.cmd(':noh') end, '[C]lear [H]ighlight')
 require('rick.utils.spell')
 
 --File Explorer
-NMap('<leader>ee', function() vim.cmd(":Ex") end, 'Activate NetRw file explorer')
+NMap('<leader>e', function() vim.cmd(":Ex") end, 'Activate NetRw file explorer')
 
 --Save
 NMap('<leader>w', function() vim.cmd(":w") end, '[W]rite')
