@@ -21,6 +21,13 @@ vim.lsp.config('lua_ls', {
 
 require('rick.plugin-config.lsp-configs.vue-config')
 
+require('roslyn').setup({
+    extensions = {
+        razor = {
+            enabled = false,
+        },
+    },
+})
 vim.lsp.config("roslyn", {
     on_attach = function ()
         print("Attached Roslyn Server!")
@@ -28,6 +35,11 @@ vim.lsp.config("roslyn", {
     settings = {
         ["csharp|code_lens"] = {
             dotnet_enable_references_code_lens = true
+        },
+        ['csharp|inlay_hints'] = {
+            dotnet_enable_inlay_hints_for_parameters = true,
+            dotnet_enable_inlay_hints_for_other_parameters = true,
+            dotnet_enable_inlay_hints_for_object_creation_parameters = true
         }
     }
 })
