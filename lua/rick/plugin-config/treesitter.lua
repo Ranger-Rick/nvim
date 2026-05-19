@@ -1,51 +1,50 @@
 local function GetParsers()
    return {
-      'lua',
-      'c_sharp',
-      'vue',
-      'typescript',
-      'javascript',
-      'css',
-      'html',
-      'markdown',
-      'editorconfig',
       'bash',
-      'sql',
+      'c_sharp',
+      'css',
+      'dockerfile',
+      'editorconfig',
       'go',
+      'html',
+      'java',
+      'javascript',
+      'json',
+      'lua',
+      'markdown',
+      'sql',
+      'terraform',
+      'typescript',
+      'vue',
       'xml',
       'yaml',
-      'dockerfile',
-      'java',
-      'terraform'
   }
 end
 
 local function GetFileTypes()
     return {
-        'lua',
+        'Dockerfile',
         'cs',
-        'vue',
-        'ts',
-        'js',
         'css',
-        'html',
-        'md',
         'editorconfig',
-        'sql',
         'go',
+        'html',
+        'java',
+        'js',
+        'json',
+        'lua',
+        'md',
+        'sql',
+        'tf',
+        'ts',
+        'vue',
         'xml',
         'yaml',
-        'Dockerfile',
-        'java',
-        'tf'
     }
 end
 
 local treesitter = require('nvim-treesitter')
-treesitter.setup({
-    ensure_installed = GetParsers()
-})
---treesitter.install()
+treesitter.install(GetParsers())
 
 vim.treesitter.language.register('xml', { 'xaml' })
 vim.treesitter.language.register('yaml', { 'yml' })
@@ -53,10 +52,10 @@ vim.treesitter.language.register('yaml', { 'yml' })
 vim.api.nvim_create_autocmd('FileType', {
   pattern = GetFileTypes(),
   callback = function()
+      vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.wo[0][0].foldmethod = 'expr'
+      vim.wo.foldlevel = 99
       vim.treesitter.start()
-        vim.notify(
-            "Treesitter Started",
-            vim.log.levels.INFO,
-            { title = 'config' })
+      vim.notify("Treesitter Started", vim.log.levels.INFO, { title = 'config' })
   end,
 })

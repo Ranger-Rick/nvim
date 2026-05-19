@@ -15,10 +15,6 @@ vim.o.scrolloff = 8
 vim.o.expandtab = true
 vim.o.cmdheight = 0
 
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = false
-
 vim.o.hlsearch = true
 vim.o.incsearch = true
 
