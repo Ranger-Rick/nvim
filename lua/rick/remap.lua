@@ -89,6 +89,12 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')
 NMap('<leader>y', '\"+yy', 'Yank current line to system clipboard')
 vim.keymap.set('v', '<leader>y','\"+y', { desc = 'Yank selection to system clipboard'} )
 
+--Swap true/false values
+NMap('<C-s>', function ()
+    vim.cmd(":s/\\v(true|false)/\\=submatch(0) ==# 'true' ? 'false' : 'true'/")
+    vim.cmd(':noh')
+end, 'Swap true/false values')
+
 -- Dadbod
 vim.g.db_ui_execute_on_save = 0
 vim.g.db_ui_use_nvim_notify = 1
