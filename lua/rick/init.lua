@@ -22,5 +22,6 @@ require('rick.utils.colors')
 require('rick.utils.vsautoinsert')
 require('rick.utils.macro-autocmd')
 require('rick.utils.macro-setspell')
+require('rick.utils.quick-paths')
 
 require('rick.snippets.snippets')
