@@ -119,7 +119,10 @@ NMap('<leader>gh', builtin.git_bcommits, '[G]it [H]istory')
 NMap('<leader>tl', builtin.treesitter, '[T]elescope [T]reesitter [L]ist Symbols')
 NMap('<leader>tm', function ()
     builtin.treesitter(
-        { symbols = { "function", "method" } })
+        {
+            prompt_title = 'Treesitter Functions / Methods',
+            symbols = { 'function', 'method' }
+        })
 end, '[T]elescope [T]reesitter [M]ethods')
 
 local monoPaths = {
