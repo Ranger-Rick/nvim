@@ -39,20 +39,20 @@ end
 
 -- Copilot (disabled by default)
 --vim.cmd(':Copilot disable')
-NMap('<leader>cd', function() vim.cmd(':Copilot disable') end, '[C]opilot [D]isable')
-NMap('<leader>ce', function() vim.cmd(':Copilot enable') end, '[C]opilot [E]nable')
-NMap('<leader>cm', function() vim.cmd(':Copilot panel') end, '[C]opilot Panel')
+NMap('<leader>cd', function() vim.cmd(':Copilot disable') end, 'Copilot Disable')
+NMap('<leader>ce', function() vim.cmd(':Copilot enable') end, 'Copilot Enable')
+NMap('<leader>cm', function() vim.cmd(':Copilot panel') end, 'Copilot Panel')
 
 --dotnet helpers
 require('rick.utils.dotnet-new')
 require('rick.utils.dotnet-restore')
-NMap('<leader>dn', DotnetTemplate, '[D]otnet [N]ew template')
-NMap('<leader>dr', DotnetRestoreLegacyMonoRepo, '[D]otnet [R]estore')
+NMap('<leader>dn', DotnetTemplate, 'Dotnet New template')
+NMap('<leader>dr', DotnetRestoreLegacyMonoRepo, 'Dotnet Restore')
 
---[F]ormat [J]son
-NMap('<leader>fj', function() vim.cmd(":%!jq '.'") end, '[F]ormat [J]son')
+--Format Json
+NMap('<leader>fj', function() vim.cmd(":%!jq '.'") end, 'Format Json')
 
-NMap('<leader>ch', function() vim.cmd(':noh') end, '[C]lear [H]ighlight')
+NMap('<leader>ch', function() vim.cmd(':noh') end, 'Clear Highlight')
 
 --Use vim.ui.select to populate spelling suggestions
 require('rick.utils.spell')
@@ -61,23 +61,23 @@ require('rick.utils.spell')
 NMap('<leader>e', function() vim.cmd(":Ex") end, 'Activate NetRw file explorer')
 
 --Save
-NMap('<leader>w', function() vim.cmd(":w") end, '[W]rite')
+NMap('<leader>w', function() vim.cmd(":w") end, 'Write')
 
 --Quit
-NMap('<leader>q', function() vim.cmd(":q") end, '[Q]uit')
-NMap('<leader>fq', function() vim.cmd(":q!") end, '[F]orce [Q]uit a single file')
-NMap('<leader>FQ', function() vim.cmd(":qall!") end, '[F]orce [Q]uit')
+NMap('<leader>q', function() vim.cmd(":q") end, 'Quit')
+NMap('<leader>fq', function() vim.cmd(":q!") end, 'Force Quit a single file')
+NMap('<leader>FQ', function() vim.cmd(":qall!") end, 'Force Quit')
 
 --Tabs
-NMap('<leader>tn', function() vim.cmd(":tabn") end, '[T]ab [N]ext')
-NMap('<leader>tp', function() vim.cmd(":tabp") end, '[Tab [P]revious')
+NMap('<leader>tn', function() vim.cmd(":tabn") end, 'Tab Next')
+NMap('<leader>tp', function() vim.cmd(":tabp") end, '[Tab Previous')
 
 --QuickFix
 --C for QuickFix; K for Close :D
-NMap('<leader>cn', function() vim.cmd(":cnext") end, 'QuickFix [N]ext')
-NMap('<leader>cp', function() vim.cmd(":cprev") end, 'QuickFix [P]rev')
-NMap('<leader>co', function() vim.cmd(":copen") end, 'QuickFix [O]pen')
-NMap('<leader>ck', function() vim.cmd(":cclose") end, 'QuickFix [C]lose')
+NMap('<leader>cn', function() vim.cmd(":cnext") end, 'QuickFix Next')
+NMap('<leader>cp', function() vim.cmd(":cprev") end, 'QuickFix Prev')
+NMap('<leader>co', function() vim.cmd(":copen") end, 'QuickFix Open')
+NMap('<leader>ck', function() vim.cmd(":cclose") end, 'QuickFix Close')
 
 --Window Navigation
 vim.keymap.set('n', '<leader>j', '<C-w>j')
@@ -99,7 +99,7 @@ end, 'Swap true/false values')
 vim.g.db_ui_execute_on_save = 0
 vim.g.db_ui_use_nvim_notify = 1
 require("rick.utils.sql-scripts.select")
-NMap('<leader>dl', SelectSqlScript, '[D]atabase Query [L]ist')
+NMap('<leader>dl', SelectSqlScript, 'Database Query List')
 
 -- Snacks Notifier
 NMap('<leader>snh', Snacks.notifier.show_history, 'Snacks Show History')
@@ -111,19 +111,19 @@ require('rick.utils.telescope-utils')
 
 vim.keymap.set('v', '<leader>gs', builtin.grep_string)
 
-NMap('<leader>sf', builtin.find_files, 'Telescope [S]earch [F]iles')
-NMap('<leader>sg', builtin.git_files, 'Telescope [S]earch [G]it files')
-NMap('<leader>sl', builtin.live_grep, '[S]earch [L]ive Grep')
-NMap('<leader>gh', builtin.git_bcommits, '[G]it [H]istory')
+NMap('<leader>sf', builtin.find_files, 'Telescope Search Files')
+NMap('<leader>sg', builtin.git_files, 'Telescope Search Git files')
+NMap('<leader>sl', builtin.live_grep, 'Search Live Grep')
+NMap('<leader>gh', builtin.git_bcommits, 'Git History')
 
-NMap('<leader>tl', builtin.treesitter, '[T]elescope [T]reesitter [L]ist Symbols')
+NMap('<leader>tl', builtin.treesitter, 'Telescope Treesitter List Symbols')
 NMap('<leader>tm', function ()
     builtin.treesitter(
         {
             prompt_title = 'Treesitter Functions / Methods',
             symbols = { 'function', 'method' }
         })
-end, '[T]elescope [T]reesitter [M]ethods')
+end, 'Telescope Treesitter Methods')
 
 local monoPaths = {
     'redsail/redsail-mobile-docs',
