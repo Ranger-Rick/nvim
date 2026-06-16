@@ -4,6 +4,7 @@ function QuickPaths()
         { key = 'Tmux', value = '~/.tmux.conf' },
         { key = 'Bash', value = '~/.zshrc' },
         { key = 'Opencode', value = '~/.config/opencode/opencode.json' },
+        { key = 'Claude', value = '~/.claude/settings.json' },
     }
 
     vim.ui.select(paths, {
