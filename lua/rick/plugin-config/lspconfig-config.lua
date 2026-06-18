@@ -21,17 +21,7 @@ vim.lsp.config('lua_ls', {
 
 require('rick.plugin-config.lsp-configs.vue-config')
 
-require('roslyn').setup({
-    extensions = {
-        razor = {
-            enabled = false,
-        },
-    },
-})
 vim.lsp.config("roslyn", {
-    on_attach = function ()
-        print("Attached Roslyn Server!")
-    end,
     settings = {
         ["csharp|code_lens"] = {
             dotnet_enable_references_code_lens = true
