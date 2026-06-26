@@ -143,12 +143,26 @@ local legacyPaths = {
     'legacy/PioneerRx.Mobile.Apps/Library'
 }
 
+local rxlocalPaths = {
+    'src/RxLocal.Patient/webapi',
+    'src/RxLocal.Patient/vueapp',
+    'src/RxLocal'
+}
+
+for i, path in ipairs(rxlocalPaths) do
+    NMapTelescopeFiles(i .. 'l', path)
+    NMapTelescopeFiles(i .. 'l', path)
+    NMapTelescopeLiveGrep(i .. 'sl', path)
+    NMapExplore(i .. 'k', path)
+    NMapBCommits('<leader>' .. i .. 'gh', path)
+end
+
 -- Mono Repo
 for i, path in ipairs(monoPaths) do
-   NMapTelescopeFiles(i .. 'l', path)
-   NMapTelescopeLiveGrep(i .. 'sl', path)
-   NMapExplore(i .. 'k', '/Users/rickbordelon/Documents/Projects/redsail-mobile-mono/' .. path)
-   NMapBCommits('<leader>' .. i .. 'gh', path)
+    NMapTelescopeFiles('n' .. i .. 'l', path)
+    NMapTelescopeLiveGrep('n' .. i .. 'sl', path)
+    NMapExplore('n' .. i .. 'k', '/Users/rickbordelon/Documents/Projects/redsail-mobile-mono/' .. path)
+    NMapBCommits('<leader>n' .. i .. 'gh', path)
 end
 
 -- Legacy Mono Repo
