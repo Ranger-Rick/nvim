@@ -21,6 +21,7 @@ vim.lsp.config('lua_ls', {
 
 require('rick.plugin-config.lsp-configs.vue-config')
 
+require('rick.plugin-config.lsp-configs.roslyn-config')
 vim.lsp.config("roslyn", {
     settings = {
         ["csharp|code_lens"] = {
@@ -30,6 +31,9 @@ vim.lsp.config("roslyn", {
             dotnet_enable_inlay_hints_for_parameters = true,
             dotnet_enable_inlay_hints_for_other_parameters = true,
             dotnet_enable_inlay_hints_for_object_creation_parameters = true
+        },
+        ['csharp|formatting'] = {
+            dotnet_organize_imports_on_format = true
         }
     }
 })
