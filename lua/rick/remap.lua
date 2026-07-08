@@ -57,8 +57,9 @@ NMap('<leader>ch', function() vim.cmd(':noh') end, 'Clear Highlight')
 --Use vim.ui.select to populate spelling suggestions
 require('rick.utils.spell')
 
---File Explorer
+--Files
 NMap('<leader>e', function() vim.cmd(":Ex") end, 'Activate NetRw file explorer')
+vim.keymap.set('n', 'gnf', '<C-w>gf')
 
 --Save
 NMap('<leader>w', function() vim.cmd(":w") end, 'Write')
@@ -150,7 +151,6 @@ local rxlocalPaths = {
 }
 
 for i, path in ipairs(rxlocalPaths) do
-    NMapTelescopeFiles(i .. 'l', path)
     NMapTelescopeFiles(i .. 'l', path)
     NMapTelescopeLiveGrep(i .. 'sl', path)
     NMapExplore(i .. 'k', path)
