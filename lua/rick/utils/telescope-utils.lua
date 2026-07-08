@@ -15,6 +15,7 @@ function TelescopeFindFilesInDirectory(directory)
         search_dirs = { directory },
         prompt_title = 'Find Files in ' .. directory,
         results_title = 'Results in ' .. directory,
+        hidden = true
     })
 end
 
