@@ -4,7 +4,11 @@ local t = ls.text_node
 local f = ls.function_node
 
 ls.add_snippets("cs", {
-    s("seq", {
+    s({
+        trig = "seq",
+        name = "Add Seq",
+        desc = "Add local Seq logging to a Serilog configuration"
+    }, {
         t(".AddSeq(\"http://"),
 
         f(function()

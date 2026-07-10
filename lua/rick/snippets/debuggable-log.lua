@@ -6,7 +6,11 @@ local rep = require("luasnip.extras").rep
 
 ls.add_snippets("cs", {
     -- Log a specific value for [D]ebugging
-    s("dlog", {
+    s({
+        trig = "dlog",
+        name = "Debug Log",
+        desc = "Add a Debug log"
+    }, {
         t("Log.Logger.Information(\"The value of "),
         rep(1),
         t(" is: {DebuggablePropertyValue}\", "),
@@ -15,7 +19,11 @@ ls.add_snippets("cs", {
     }),
 
     -- Add a log as a [H]ealth Check
-    s("hlog", {
+    s({
+        trig = "hlog",
+        name = "Health Log",
+        desc = "Add a Health Check Log"
+    }, {
         t("Log.Logger.Information(\"Health Check Log: "),
         i(1, "LogIdentifier"),
         t("\");")

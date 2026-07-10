@@ -6,7 +6,11 @@ local f = ls.function_node
 local rep = require("luasnip.extras").rep
 
 ls.add_snippets("cs", {
-    s("bind", {
+    s({
+        trig = "bind",
+        name = "Bindable Property",
+        desc = "Add a Bindable Property to a C# file"
+    }, {
         t("public static readonly BindableProperty "),
         i(1, "PropertyName"),
         t("Property = BindableProperty.Create("),
