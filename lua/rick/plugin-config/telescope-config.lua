@@ -10,6 +10,11 @@ require("telescope").setup({
             require("telescope.themes").get_dropdown()
         }
     },
+    pickers = {
+        find_files = {
+            hidden = true
+        }
+    },
     defaults = {
         path_display = { 'truncate' },
         mappings = {
