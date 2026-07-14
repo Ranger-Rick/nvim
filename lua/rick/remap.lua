@@ -147,7 +147,8 @@ local legacyPaths = {
 local rxlocalPaths = {
     'src/RxLocal.Patient/webapi',
     'src/RxLocal.Patient/vueapp',
-    'src/RxLocal'
+    'src/RxLocal',
+    'src/PipelineTemplates',
 }
 
 for i, path in ipairs(rxlocalPaths) do
