@@ -18,9 +18,9 @@ local function DatadogLog(level)
         i(1, 'Message'),
         t('\', { action: ACTIONS.'),
         i(2, 'ACTION'),
-        t(', logger: \''),
-        i(3, 'logger'),
-        t('\' });')
+        t(', component: COMPONENTS.'),
+        i(3, 'component'),
+        t(' });')
     })
 end
 
@@ -31,9 +31,9 @@ local function DatadogError()
         i(1, 'Error'),
         t('\', { action: ACTIONS.'),
         i(2, 'ACTION'),
-        t(', logger: \''),
-        i(3, 'logger'),
-        t('\', }, '),
+        t(', component: COMPONENTS.'),
+        i(3, 'component'),
+        t(' }, '),
         i(4, 'err'),
         t(' instanceof Error ? '),
         rep(4),
