@@ -71,12 +71,10 @@ NMap('<leader>FQ', function() vim.cmd(":qall!") end, 'Force Quit')
 
 --Tabs
 NMap('<leader>tn', function() vim.cmd(":tabn") end, 'Tab Next')
-NMap('<leader>tp', function() vim.cmd(":tabp") end, '[Tab Previous')
+NMap('<leader>tp', function() vim.cmd(":tabp") end, 'Tab Previous')
 
 --QuickFix
 --C for QuickFix; K for Close :D
-NMap('<leader>cn', function() vim.cmd(":cnext") end, 'QuickFix Next')
-NMap('<leader>cp', function() vim.cmd(":cprev") end, 'QuickFix Prev')
 NMap('<leader>co', function() vim.cmd(":copen") end, 'QuickFix Open')
 NMap('<leader>ck', function() vim.cmd(":cclose") end, 'QuickFix Close')
 
