@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+-- Enable project-local config: Neovim will look for .nvim.lua / .nvimrc / .exrc
+-- in the CWD and source it after prompting to :trust the file.
+vim.o.exrc = true
+
 --require('rick.plugin-config.lazy-config')
 require('rick.plugin-config.pack')
 require('rick.plugin-config.mason-config')

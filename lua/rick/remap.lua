@@ -142,20 +142,6 @@ local legacyPaths = {
     'legacy/PioneerRx.Mobile.Apps/Library'
 }
 
-local rxlocalPaths = {
-    'src/RxLocal.Patient/webapi',
-    'src/RxLocal.Patient/vueapp',
-    'src/RxLocal',
-    'src/PipelineTemplates',
-}
-
-for i, path in ipairs(rxlocalPaths) do
-    NMapTelescopeFiles(i .. 'l', path)
-    NMapTelescopeLiveGrep(i .. 'sl', path)
-    NMapExplore(i .. 'k', path)
-    NMapBCommits('<leader>' .. i .. 'gh', path)
-end
-
 -- Mono Repo
 for i, path in ipairs(monoPaths) do
     NMapTelescopeFiles('n' .. i .. 'l', path)
