@@ -5,6 +5,7 @@ function QuickPaths()
         { key = 'Bash', value = '~/.zshrc' },
         { key = 'Opencode', value = '~/.config/opencode/opencode.json' },
         { key = 'Claude', value = '~/.claude/settings.json' },
+        { key = 'DBUI', value = '~/.local/share/db_ui/connections.json' },
     }
 
     vim.ui.select(paths, {
