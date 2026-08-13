@@ -70,8 +70,8 @@ NMap('<leader>fq', function() vim.cmd(":q!") end, 'Force Quit a single file')
 NMap('<leader>FQ', function() vim.cmd(":qall!") end, 'Force Quit')
 
 --Tabs
-NMap('<leader>tn', function() vim.cmd(":tabn") end, 'Tab Next')
-NMap('<leader>tp', function() vim.cmd(":tabp") end, 'Tab Previous')
+NMap('tn', function() vim.cmd(":tabn") end, 'Tab Next')
+NMap('tp', function() vim.cmd(":tabp") end, 'Tab Previous')
 
 --QuickFix
 --C for QuickFix; K for Close :D
