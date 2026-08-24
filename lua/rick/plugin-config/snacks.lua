@@ -2,10 +2,23 @@ local function selectDashboard()
     local dashboard = 'custom'
     local path = 'rick.plugin-config.dashboards.'
 
-    local ok, output = pcall(require, path .. dashboard .. '-dashboard')
+    local fullDashboardPath = path .. dashboard .. '-dashboard'
+    local ok, output = pcall(require, fullDashboardPath)
     if not ok then
         output = require('rick.plugin-config.dashboards.default-dashboard')
     end
+
+    if vim.o.columns > 120 then
+        return output
+    end
+
+    local compactOk, compact = pcall(require, fullDashboardPath .. '-compact')
+    if not compactOk then
+        return output
+    end
+
+    output = compact
+
     return output;
 end
 
