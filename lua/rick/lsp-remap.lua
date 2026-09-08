@@ -66,10 +66,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local builtin = require('telescope.builtin')
 
     LspRemap('gr', event.buf, function ()
-        builtin.lsp_references({
+        local opts = {
             --path_display = {'truncate'},
             show_line = false
-        })
+        }
+
+        local js_ts_filetypes = {
+            javascript = true,
+            typescript = true,
+        }
+
+        if js_ts_filetypes[vim.bo[event.buf].filetype] then
+            opts.file_ignore_patterns = {
+                '%.spec%.[jt]sx?$',
+            }
+        end
+
+        builtin.lsp_references(opts)
     end, 'Lsp Get References')
 end
 })
