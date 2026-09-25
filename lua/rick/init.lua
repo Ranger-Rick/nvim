@@ -28,5 +28,6 @@ require('rick.utils.macro-autocmd')
 require('rick.utils.macro-setspell')
 require('rick.utils.quick-paths')
 require('rick.utils.xcode-version-helper')
+require('rick.utils.localhost')
 
 require('rick.snippets.snippets')
