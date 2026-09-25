@@ -64,6 +64,14 @@ require('rick.utils.spell')
 NMap('<leader>e', function() vim.cmd(":Ex") end, 'Activate NetRw file explorer')
 vim.keymap.set('n', 'gnf', '<C-w>gf')
 
+NMap('<leader>yp', function ()
+    vim.fn.setreg('+', vim.fn.expand('%:t'))
+end, 'Yank current file name to system clipboard')
+
+NMap('<leader>py', function ()
+    vim.fn.setreg('+', vim.fn.expand('%'))
+end, 'Yank current file name and path to system clipboard')
+
 --Save
 NMap('<leader>w', function() vim.cmd(":w") end, 'Write')
 
