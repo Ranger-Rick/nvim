@@ -76,6 +76,10 @@
       "rev": "427b576c16792edad01a92b89721d923c19ad60f",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "vim-alloy": {
+      "rev": "0273f88f7199189f9a0f32213a34ab778e226f86",
+      "src": "https://github.com/grafana/vim-alloy"
+    },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
       "src": "https://github.com/tpope/vim-dadbod"

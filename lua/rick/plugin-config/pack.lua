@@ -2,6 +2,8 @@ vim.pack.add({
     -- TODO: Figure out how to disable Copilot by default and re-enable it when desired
     --{ src = 'https://github.com/github/copilot.vim',                       },
 
+
+    { src = 'https://github.com/grafana/vim-alloy',                        },
     { src = 'https://github.com/sainnhe/gruvbox-material',                 },
     { src = 'https://github.com/folke/snacks.nvim',                        },
     { src = 'https://github.com/onsails/lspkind.nvim',                     },
